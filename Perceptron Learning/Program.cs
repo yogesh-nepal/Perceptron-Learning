@@ -32,11 +32,12 @@
             // initialize variables for convergence check
             bool converged = false;
             int epoch = 0;
+            int maxEpochs = 1000; // maximum number of epochs
 
             System.Diagnostics.Stopwatch sw = System.Diagnostics.Stopwatch.StartNew();
 
             // train the perceptron
-            while (!converged) // maximum 1000 epochs
+            while (!converged && epoch < maxEpochs) // maximum 1000 epochs
             {
                 int errors = 0; // misclassification error counter
 
